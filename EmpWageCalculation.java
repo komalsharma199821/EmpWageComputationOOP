@@ -1,5 +1,11 @@
 import java.util.*;
 public class EmpWageCalculation {
+     
+    //declaring the class variables(use case 7)
+       static int MAX_WORKING_DAYS = 20;
+       static int MAX_WORKING_HOURS = 100;
+       static int EMPLOYEE_PER_HOUR_WAGE = 20;
+      
      //use case 1
     public static int generateRandomNumber(){
          double x=Math.random();
@@ -79,15 +85,12 @@ public class EmpWageCalculation {
     }
     //use case 6
 	//calculation till the condition of 100 working Hours and 20 working days is reached
-    
+    //use case 7
+	//the class method for calculating the emp wage
     public static int conditionalEmpWageCalculational(){
         
         int totalWorkingDays = 0;
         int totalWorkingHrs = 0;
-        
-        int MAX_WORKING_DAYS = 20;
-        int MAX_WORKING_HOURS = 100;
-        int EMPLOYEE_PER_HOUR_WAGE = 20;
         int EMP_WORK_HOURS = 0;
         int EMP_WORK_DAYS = 0;
         int oldWage = 0;
@@ -141,6 +144,10 @@ public class EmpWageCalculation {
       //use case 6
 	int conditionalEmpWageCalculated = conditionalEmpWageCalculational();
       System.out.println("The Conditional Wage Of an Employee is : "+conditionalEmpWageCalculated);
+
+      //use case 7
+	int conditionalEmpWageCalculatedForUC7 = conditionalEmpWageCalculational();
+     System.out.println("The Conditional Wage Of an Employee for uc7 is : "+conditionalEmpWageCalculatedForUC7);
     }
 
 }
