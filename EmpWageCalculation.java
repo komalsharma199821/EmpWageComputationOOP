@@ -147,10 +147,61 @@ public class EmpWageCalculation {
 
       //use case 7
 	int conditionalEmpWageCalculatedForUC7 = conditionalEmpWageCalculational();
-     System.out.println("The Conditional Wage Of an Employee for uc7 is : "+conditionalEmpWageCalculatedForUC7);
+        System.out.println("The Conditional Wage Of an Employee for uc7 is : "+conditionalEmpWageCalculatedForUC7);
+
+      //use case 8
+     EmpWageCalculation obj1 = new EmpWageCalculation();
+     EmpWageCompany obj2 = new EmpWageCompany("SRS",20,12,12);
+     EmpWageCompany obj3 = new EmpWageCompany("Kapoors & Sons",8,100,20);
+     obj2.empWageAlongCompany();
+     obj3.empWageAlongCompany();
     }
 
 }
 
+//usecase 8
+class EmpWageCompany {
+   
+   String companyName="";
+   int wage = 0;
+   int noOfworkingDays = 0;
+   int workingHrsPerMonth = 0;
+   EmpWageCompany(String companyName,int wage,int noOfworkingDays,int workingHrsPerMonth){
+       this.companyName=companyName;
+       this.wage=wage;
+       this.noOfworkingDays=noOfworkingDays;
+       this.workingHrsPerMonth=workingHrsPerMonth;
+   }
+   //use case-7
+	public int empWageAlongCompany() {
+	   int totalWorkingDays=0;
+	   int totalWorkingHrs=0;
+       int MAX_WORKING_DAYS = noOfworkingDays;
+       int MAX_WORKING_HOURS = workingHrsPerMonth;
+       int EMPLOYEE_PER_HOUR_WAGE = wage;
+       int EMP_WORK_HOURS = 0;
+       int EMP_WORK_DAYS = 0;
+       int oldWage = 0;
+       
+       int empWage = 0;
+       
+       while ( (EMP_WORK_HOURS < MAX_WORKING_HOURS) || (EMP_WORK_DAYS < MAX_WORKING_DAYS) ){
+           
+           //value = generateRandomNumber();
+           
+           totalWorkingDays = totalWorkingDays+1;
+           totalWorkingHrs = totalWorkingHrs+1; 
+           
+           empWage = oldWage + (totalWorkingDays * totalWorkingHrs * EMPLOYEE_PER_HOUR_WAGE);
+           oldWage = empWage;
+           
+           EMP_WORK_HOURS = EMP_WORK_HOURS + totalWorkingHrs;
+           EMP_WORK_DAYS = EMP_WORK_DAYS + totalWorkingDays;
+           
+       }
+       System.out.println("Empwage For "+companyName+" is =>"+empWage);
+       return empWage;
+	}
 
+}
 
