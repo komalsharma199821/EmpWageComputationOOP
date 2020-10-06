@@ -172,7 +172,7 @@ class EmpWageCompany {
        this.noOfworkingDays=noOfworkingDays;
        this.workingHrsPerMonth=workingHrsPerMonth;
    }
-   //use case-7
+   
 	public int empWageAlongCompany() {
 	   int totalWorkingDays=0;
 	   int totalWorkingHrs=0;
